@@ -1,9 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: roboto-bold;
+  src: url(../public//fonts/RobotoCondensed-Bold.ttf);
+}
+@font-face {
+  font-family: roboto-regular;
+  src: url(../public//fonts/RobotoCondensed-Regular.ttf);
+}
+@font-face {
+  font-family: montserat-medium;
+  src: url(../public//fonts/Montserrat-Medium.ttf);
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+  /* --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace; */
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -74,15 +91,18 @@
 }
 
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   padding: 0;
   margin: 0;
+  border: 0;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  min-height: 100vh;
+  border: 0;
 }
 
 body {
@@ -103,5 +123,29 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@layer components {
+  .header_catalog_text {
+    @apply max-sm:hidden pl-[8px] font-roboto font-[400] text-[20px] leading-[26px] text-white tracking-wide;
+  }
+  .search_text {
+    @apply font-roboto font-[700] text-[20px] leading-[26px];
+  }
+  .search_placeholder {
+    @apply font-montserrat font-[400] text-[22px] leading-[30.8px];
+  }
+  .select_title {
+    @apply font-roboto font-[400] text-[20px] leading-[130%] text-white;
+  }
+}
+
+@layer base {
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
   }
 }

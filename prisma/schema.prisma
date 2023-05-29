@@ -1,0 +1,174 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Mark {
+  markId Int     @id
+  mark   String
+  marked Boolean
+}
+
+model Model {
+  modelId    Int @id
+  markId     Int
+  model      String
+  year_begin Int
+  year_end   Int
+  marked     Boolean
+}
+
+model Vehicl {
+  typeId Int @id
+  markId Int
+  modelId Int
+  typeName String
+  typeRange String
+  engines String
+  kw String
+  hp String
+  ccmTech Int
+  capacity Decimal @db.Decimal(2,1)
+  cylinders Int
+  valve Int
+  fuel String   
+  engineType String
+  fuelPreparation String
+  bodyType String
+  driveType String
+  mark String
+  model String
+
+  marked Boolean
+}
+
+model Catalog {
+  typeId Int
+  groupId Int
+  groupCode String
+  subGroupCode String
+  count Int
+  marked Boolean
+
+  @@id([typeId, groupId])
+  @@index([typeId, groupId])
+}
+
+ model Item {
+  itemId Int @id @default(autoincrement())
+
+  brand String
+  firstPic String
+  criterias Json[]
+  description String
+  groupCode String
+  subGroupCode String
+  itemNo String @unique
+  itemNo2 String
+  price Decimal @db.Decimal(10,2)
+  retail Decimal @db.Decimal(10,2)
+  searchDescription String
+  discontinued Boolean
+  inStock Boolean
+
+  vn String
+  kvOne String
+  kvTwo String
+  Kh String
+
+  marked Boolean
+
+  @@index([itemNo])
+  @@index([itemNo2])
+  @@index([itemId])
+ }
+
+model Picture {
+  itemNo String
+  itemId Int
+  pathName String
+  fileName String
+  myUrl String
+
+
+  @@id([pathName, fileName])
+  @@index([itemNo])
+  @@index([itemId])
+}
+
+model Relation {
+  relationId Int @id @default(autoincrement())
+  
+  typeId Int
+  groupId Int
+
+  itemNo String
+  itemId Int
+ 
+  @@index([typeId, groupId])
+  @@index([itemNo])
+}
+
+model OeRelation {
+  itemId Int
+  itemNo String
+  search String
+  brand String  
+ 
+  @@id([itemNo, search])
+  @@index([itemNo])
+  @@index([search])
+  @@index([itemId])
+}
+
+model ItemReplace {
+  itemReplaceNoId Int @id @default(autoincrement())
+
+  brand String
+  firstPic String
+  criterias Json[]
+  description String
+  groupCode String
+  subGroupCode String
+  itemNo String @unique
+  itemNo2 String
+  price Decimal @db.Decimal(10,2)
+  retail Decimal @db.Decimal(10,2)
+  searchDescription String
+  discontinued Boolean
+  inStock Boolean
+
+  vn String
+  kvOne String
+  kvTwo String
+  Kh String
+
+  marked Boolean
+
+  @@index([itemNo])
+  @@index([itemNo2])
+  @@index([itemReplaceNoId])
+}
+
+model ReplaceRelation {
+  itemNo String
+  itemReplaceNo String
+  itemId Int
+  itemReplaceNoId Int
+
+  @@id([itemNo, itemReplaceNo])
+  @@index([itemId])
+  @@index([itemReplaceNoId])
+  @@index([itemReplaceNo])
+}
+
+
+
+
+
+
+

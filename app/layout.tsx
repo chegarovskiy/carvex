@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import clsx from "clsx";
 import type { Metadata } from "next";
-import Sidebar from "../components/sidebar";
+import SidebarLayout from "../components/sidebarLayout";
 import Header from "../components/header";
 import Futter from "../components/futter";
 import { Roboto, Montserrat } from "next/font/google";
@@ -55,7 +55,7 @@ export default function RootLayout({
 
           <div className="flex box-border justify-center w-screen max-w-layout-1600 ">
             <div className="flex w-full">
-              <Sidebar />
+              <SidebarLayout />
               {children}
             </div>
           </div>

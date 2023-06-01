@@ -1,0 +1,56 @@
+<svg
+  width="26"
+  height="26"
+  viewBox="0 0 26 26"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+<mask id="path-1-inside-1_692_3925" fill="white">
+<rect width="12" height="12" rx="1" />
+</mask>
+<rect
+    width="12"
+    height="12"
+    rx="1"
+    stroke="#4B4B4B"
+    stroke-width="3"
+    mask="url(#path-1-inside-1_692_3925)"
+  />
+<mask id="path-2-inside-2_692_3925" fill="white">
+<rect x="14" width="12" height="12" rx="1" />
+</mask>
+<rect
+    x="14"
+    width="12"
+    height="12"
+    rx="1"
+    stroke="#3EC927"
+    stroke-width="3"
+    mask="url(#path-2-inside-2_692_3925)"
+  />
+<mask id="path-3-inside-3_692_3925" fill="white">
+<rect x="14" y="14" width="12" height="12" rx="1" />
+</mask>
+<rect
+    x="14"
+    y="14"
+    width="12"
+    height="12"
+    rx="1"
+    stroke="#4B4B4B"
+    stroke-width="3"
+    mask="url(#path-3-inside-3_692_3925)"
+  />
+<mask id="path-4-inside-4_692_3925" fill="white">
+<rect y="14" width="12" height="12" rx="1" />
+</mask>
+<rect
+    y="14"
+    width="12"
+    height="12"
+    rx="1"
+    stroke="#4B4B4B"
+    stroke-width="3"
+    mask="url(#path-4-inside-4_692_3925)"
+  />
+</svg>

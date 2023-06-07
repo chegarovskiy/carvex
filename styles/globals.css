@@ -139,6 +139,9 @@ a {
   .select_title {
     @apply font-roboto font-[400] text-[20px] leading-[130%] text-white;
   }
+  .active_button_select {
+    @apply bg-slate-400;
+  }
 }
 
 @layer base {

@@ -1,9 +1,17 @@
 import { HEADER } from "dictionarys/dictionary";
 import Image from "next/image";
 import Search from "./search";
-import SearchSelect from "./searchSelect";
+import SearchSelect, { ButtonSelect } from "./searchSelect";
+import SearchSelectOptions from "./searchSelectOptions";
 
-export default function SearchLayout() {
+const buttonsSelect: ButtonSelect[] = [
+  {label: HEADER.SELECT_MARK, href:"/"},
+  {label: HEADER.SELECT_MODEL, href:"/models"},
+  {label: HEADER.SELECT_MODIFICATION, href:"/modifications"}
+];
+
+
+export default function SearchLayout({children}:{children: any}) {
   return (
     <section>
       <div className="flex box-border justify-center w-screen bg-gray-700 h-[300px]">
@@ -22,7 +30,8 @@ export default function SearchLayout() {
             </div>
           </div>
           <div className="flex pt-[16px] w-full h-full bg-gray-300">
-            <SearchSelect/>
+            <SearchSelect  buttonsSelect={buttonsSelect} />
+            {children}
           </div>
         </div>
       </div>

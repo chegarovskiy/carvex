@@ -7,6 +7,7 @@ import Futter from "../components/futter";
 import { Roboto, Montserrat } from "next/font/google";
 import { NextFontWithVariable } from "next/dist/compiled/@next/font";
 import SearchLayout from "components/searchLayout";
+import MarksLayout from "./marks/layout";
 
 export const metadata: Metadata = {
   title: "Carvex",
@@ -50,13 +51,14 @@ export default function RootLayout({
               <Header />
             </div>
           </div>
-          <SearchLayout />
+          <SearchLayout children={<MarksLayout children={undefined}/>}/>
          
 
           <div className="flex box-border justify-center w-screen max-w-layout-1600 ">
             <div className="flex w-full">
               <Sidebar />
-              {children}
+              
+              
             </div>
           </div>
           <Futter />

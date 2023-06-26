@@ -51,7 +51,7 @@ export default function RootLayout({
               <Header />
             </div>
           </div>
-          <SearchLayout children={<MarksLayout children={undefined}/>}/>
+          <SearchLayout/>
          
 
           <div className="flex box-border justify-center w-screen max-w-layout-1600 ">

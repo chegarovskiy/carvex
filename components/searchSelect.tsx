@@ -1,6 +1,6 @@
 "use client";
 
-import { Marks } from "app/marks/layout";
+import  Marks  from "app/marks/layout";
 import { HEADER } from "dictionarys/dictionary";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,9 +36,9 @@ export default function SearchSelect({
 
 
   const handleClick = () => {
-    Marks().then(setM).catch(e => {
-      console.log("error handleClick", e)
-    })
+    // Marks().then(setM).catch(e => {
+    //   console.log("error handleClick", e)
+    // })
   }
 
 

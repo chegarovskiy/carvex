@@ -11,7 +11,7 @@ const buttonsSelect: ButtonSelect[] = [
 ];
 
 
-export default function SearchLayout({children}:{children: any}) {
+export default function SearchLayout() {
   return (
     <section>
       <div className="flex box-border justify-center w-screen bg-gray-700 h-[300px]">
@@ -31,7 +31,7 @@ export default function SearchLayout({children}:{children: any}) {
           </div>
           <div className="flex pt-[16px] w-full h-full bg-gray-300">
             <SearchSelect  buttonsSelect={buttonsSelect} />
-            {children}
+            {}
           </div>
         </div>
       </div>
